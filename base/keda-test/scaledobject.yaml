@@ -4,20 +4,20 @@ metadata:
   name: nginx-scaledobject
   namespace: keda-test
 spec:
-  minReplicaCount: 5
+  minReplicaCount: 1
   maxReplicaCount: 100
+  cooldownPeriod: 30
   scaleTargetRef:
     name: nginx
   triggers:
   - type: cron
     metadata:
       timezone: Asia/Tokyo
-      start: 0 9 * * *
-      end: 30 17 * * * 
+      start: 0 17 * * *
+      end: 50 17 * * * 
       desiredReplicas: "5"
-  - type: cron
+  - type: cpu
+    metricType: Utilization
     metadata:
-      timezone: Asia/Tokyo
-      start: 30 17 * * 6-7
-      end: 0 18 * * 6-7
-      desiredReplicas: "10"
+      value: "85"
+
