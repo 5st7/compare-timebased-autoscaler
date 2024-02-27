@@ -1,0 +1,6 @@
+namespace: kube-downscaler-test 
+
+resources:
+  - namespace.yaml
+  - deployment.yaml
+  - hpa.yaml
