@@ -1,0 +1,6 @@
+namespace: keda-test 
+
+resources:
+  - namespace.yaml
+  - deployment.yaml
+  - scaledobject.yaml
