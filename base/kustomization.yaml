@@ -2,6 +2,8 @@ resources:
   - https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.6.3/components.yaml
   - keda
   - kube-downscaler
+  - keda-test
+  - kube-downscaler-test
 
 patches:
   - patch: |-
